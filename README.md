@@ -4,7 +4,8 @@ Welcome to my personal portfolio website!
 This project showcases my profile, skills, and the projects I’ve built as I learn and grow in software development.
 
 🌐 **Live Website**  
-🔗 [Click here to visit](https://nishant-singh-sogarwal.github.io/portfolio-website/)
+🔗 [Click here to visit my portfolio](https://nishant-singh-sogarwal.github.io/nishant-portfolio-website/)
+
 
 ## 🚀 Tech Stack
 - HTML
