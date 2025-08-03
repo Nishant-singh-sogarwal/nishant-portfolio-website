@@ -1,53 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nishant Singh Sogarwal | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notes Web App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Nishant Singh Sogarwal</h1>
-    <p>Aspiring Software Developer | Web Development | DSA Enthusiast</p>
-  </header>
+  <div class="container">
+    <h1>📝 Notes Web App</h1>
 
-  <main>
-    <section id="projects">
-      <h2>🚀 My Projects</h2>
+    <div class="input-group">
+      <textarea id="noteText" placeholder="Write your note here..."></textarea>
+      <button onclick="addNote()">Add Note</button>
+    </div>
 
-      <!-- Student Task Manager -->
-      <div class="project">
-        <h3>📋 Student Task Manager</h3>
-        <p>A responsive task manager for students with modern UI (glassmorphism), colored priority badges, and localStorage-based persistence.</p>
-        <a href="https://nishant-singh-sogarwal.github.io/student-task-manager/" target="_blank">🔗 Live Demo</a>
-        <a href="https://github.com/Nishant-singh-sogarwal/student-task-manager" target="_blank">📂 GitHub</a>
-      </div>
+    <div id="notesContainer"></div>
+  </div>
 
-      <!-- Notes Web App -->
-      <div class="project">
-        <h3>📝 Notes Web App</h3>
-        <p>A note-taking web app that allows users to create, edit, and delete notes. Uses localStorage and has a clean, responsive design.</p>
-        <a href="https://nishant-singh-sogarwal.github.io/notes-web-app/" target="_blank">🔗 Live Demo</a>
-        <a href="https://github.com/Nishant-singh-sogarwal/notes-web-app" target="_blank">📂 GitHub</a>
-      </div>
-
-      <!-- Portfolio Website -->
-      <div class="project">
-        <h3>🌐 Portfolio Website</h3>
-        <p>This very portfolio to showcase my skills, resume, and projects. Built using HTML & CSS. Clean and responsive UI.</p>
-        <a href="https://nishant-singh-sogarwal.github.io/nishant-portfolio-website/" target="_blank">🔗 Live Demo</a>
-        <a href="https://github.com/Nishant-singh-sogarwal/nishant-portfolio-website" target="_blank">📂 GitHub</a>
-      </div>
-
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Nishant Singh Sogarwal</p>
-  </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
