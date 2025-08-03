@@ -4,41 +4,44 @@ function saveNotes() {
   localStorage.setItem("notes", JSON.stringify(notes));
 }
 
+function addNote() {
+  const noteInput = document.getElementById("noteInput");
+  const noteText = noteInput.value.trim();
+
+  if (noteText === "") return;
+
+  notes.push(noteText);
+  saveNotes();
+  renderNotes();
+  noteInput.value = "";
+}
+
+function deleteNote(index) {
+  notes.splice(index, 1);
+  saveNotes();
+  renderNotes();
+}
+
 function renderNotes() {
   const container = document.getElementById("notesContainer");
   container.innerHTML = "";
 
   notes.forEach((note, index) => {
-    const div = document.createElement("div");
-    div.className = "note";
+    const noteDiv = document.createElement("div");
+    noteDiv.className = "note";
 
-    const p = document.createElement("p");
-    p.textContent = note;
+    const para = document.createElement("p");
+    para.innerText = note;
 
-    const btn = document.createElement("button");
-    btn.className = "delete-btn";
-    btn.textContent = "Delete";
-    btn.onclick = () => {
-      notes.splice(index, 1);
-      saveNotes();
-      renderNotes();
-    };
+    const delBtn = document.createElement("button");
+    delBtn.className = "delete-btn";
+    delBtn.innerText = "Delete";
+    delBtn.onclick = () => deleteNote(index);
 
-    div.appendChild(p);
-    div.appendChild(btn);
-    container.appendChild(div);
+    noteDiv.appendChild(para);
+    noteDiv.appendChild(delBtn);
+    container.appendChild(noteDiv);
   });
-}
-
-function addNote() {
-  const input = document.getElementById("noteInput");
-  const text = input.value.trim();
-  if (text) {
-    notes.push(text);
-    saveNotes();
-    renderNotes();
-    input.value = "";
-  }
 }
 
 renderNotes();
