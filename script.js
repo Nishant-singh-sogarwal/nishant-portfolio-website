@@ -9,37 +9,36 @@ function renderNotes() {
   container.innerHTML = "";
 
   notes.forEach((note, index) => {
-    const noteDiv = document.createElement("div");
-    noteDiv.className = "note";
+    const div = document.createElement("div");
+    div.className = "note";
 
-    const noteText = document.createElement("p");
-    noteText.innerText = note;
+    const p = document.createElement("p");
+    p.textContent = note;
 
-    const deleteBtn = document.createElement("button");
-    deleteBtn.className = "delete-btn";
-    deleteBtn.innerText = "×";
-    deleteBtn.onclick = () => deleteNote(index);
+    const btn = document.createElement("button");
+    btn.className = "delete-btn";
+    btn.textContent = "Delete";
+    btn.onclick = () => {
+      notes.splice(index, 1);
+      saveNotes();
+      renderNotes();
+    };
 
-    noteDiv.appendChild(noteText);
-    noteDiv.appendChild(deleteBtn);
-    container.appendChild(noteDiv);
+    div.appendChild(p);
+    div.appendChild(btn);
+    container.appendChild(div);
   });
 }
 
 function addNote() {
-  const noteText = document.getElementById("noteText").value.trim();
-  if (noteText === "") return;
-
-  notes.push(noteText);
-  saveNotes();
-  renderNotes();
-  document.getElementById("noteText").value = "";
-}
-
-function deleteNote(index) {
-  notes.splice(index, 1);
-  saveNotes();
-  renderNotes();
+  const input = document.getElementById("noteInput");
+  const text = input.value.trim();
+  if (text) {
+    notes.push(text);
+    saveNotes();
+    renderNotes();
+    input.value = "";
+  }
 }
 
 renderNotes();
